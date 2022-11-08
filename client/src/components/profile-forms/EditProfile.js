@@ -82,7 +82,7 @@ const EditProfile = ({
           <small>* = required field</small>
         </div>
         <form className='form' onSubmit={(e) => onSubmit(e)}>
-          <div className="scroller">
+          <div className="scroller page">
             <div className="container">
               <div className='form-group'>
                 <select name='status' value={status} onChange={(e) => onChange(e)}>
