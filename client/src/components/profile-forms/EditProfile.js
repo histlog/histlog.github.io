@@ -72,7 +72,7 @@ const EditProfile = ({
 
   return (
     <Fragment>
-      <div className="pageWrap page-w-form">
+      <div className="pageWrap page-w-form px-3">
         <div className="container">          
           <h1 className='large text-primary'>Create Your Profile</h1>
           <p className='lead'>

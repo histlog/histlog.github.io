@@ -4,6 +4,11 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
+
+//redux
+import { Provider } from 'react-redux';
+import store from './store';
+
 import Navbar from './components/layout/Navbar';
 import Landing from './components/layout/Landing';
 import Register from './components/auth/Register';
@@ -16,15 +21,17 @@ import PrivateRoute from './components/routing/PrivateRoute';
 import { loadUser } from './actions/auth';
 import setAuthToken from './utils/setAuthToken';
 
-//redux
-import { Provider } from 'react-redux';
-import store from './store';
-
+import GlobalStyles from './assets/styles/globalstyles';
 import './App.scss';
+import './index.css';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
+
+const UIStyleComponent = React.lazy(() =>
+    import('./components/UiStyleGuide/index')
+);
 
 const App = () => {
   useEffect(() => {
@@ -33,6 +40,8 @@ const App = () => {
 
   return (
     <Provider store={store}>
+      <GlobalStyles />
+
       <Router>
         <Fragment>
           <Navbar></Navbar>
@@ -40,6 +49,11 @@ const App = () => {
           <section className='wrapper'>
             <Alert />
             <Switch>
+            <Route 
+                exact 
+                path="/style-guide">
+                <UIStyleComponent />
+            </Route>
               <Route
                 exact
                 path='/register'

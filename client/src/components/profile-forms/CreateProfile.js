@@ -47,7 +47,7 @@ const CreateProfile = ({ createProfile, history }) => {
 
   return (
     <Fragment>
-      <div className="pageWrap page-w-form">
+      <div className="pageWrap page-w-form px-3">
         <h1 className="large text-primary">
           Create Your Profile
         </h1>
