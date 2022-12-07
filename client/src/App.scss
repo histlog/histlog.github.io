@@ -1,5 +1,6 @@
 /* Global Styles */
 @use "sass:map";
+@use 'sass:math';
 
 :root {
   --primary-color: #17a2b8;
@@ -13,6 +14,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+@function rem($pixel) {
+  // divide $pixel by 16 to return rem
+  @return math.div($pixel, 16);
 }
 
 html {
